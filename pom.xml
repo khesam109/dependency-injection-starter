@@ -11,6 +11,7 @@
 
     <modules>
         <module>inject-hello</module>
+        <module>atm-simulator</module>
     </modules>
 
     <properties>
