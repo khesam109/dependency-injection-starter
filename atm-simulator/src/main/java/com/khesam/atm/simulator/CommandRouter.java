@@ -11,19 +11,20 @@ import java.util.Map;
  */
 final class CommandRouter {
 
-    private final Map<String, Command> commands = new HashMap<>();
+    private final Map<String, Command> commands;
 
     /**
      * In order for Dagger to know how to create a CommandRouter,
      * we need to add an @Inject annotation to its constructor.
      * The @Inject annotation indicates to Dagger that when we ask for a CommandRouter,
      * Dagger should call new CommandRouter().
+     *
      */
     @Inject
     public CommandRouter(
-            HelloWorldCommand helloWorldCommand
+            Map<String, Command> commands
     ) {
-        commands.put(helloWorldCommand.key(), helloWorldCommand);
+        this.commands = commands;
     }
 
     Command.Result rout(String input) {

@@ -8,13 +8,13 @@ import java.util.List;
  */
 final class HelloWorldCommand implements Command {
 
-    @Inject
-    public HelloWorldCommand() {
-    }
+    private final Outputter outputter;
 
-    @Override
-    public String key() {
-        return "hello";
+    @Inject
+    public HelloWorldCommand(
+            Outputter outputter
+    ) {
+        this.outputter = outputter;
     }
 
     @Override
@@ -23,7 +23,7 @@ final class HelloWorldCommand implements Command {
             return Result.invalid();
         }
 
-        System.out.println("world!");
+        outputter.output("world!");
         return Result.handled();
     }
 }
