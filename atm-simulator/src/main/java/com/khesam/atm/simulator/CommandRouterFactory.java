@@ -17,14 +17,14 @@ import javax.inject.Singleton;
  * Consider that, if you want to change HelloWorldCommand with LoginCommand, just need replace the corresponding
  * module in component!
  */
-@Singleton
-@Component(modules = {
-        HelloWorldModule.class,
-        LoginCommandModule.class,
-        UserCommandsModule.class,
-        SystemOutModule.class
-})
-interface CommandRouterFactory {
-
-    CommandRouter router();
-}
+//@Singleton
+//@Component(modules = {
+//        HelloWorldModule.class,
+//        LoginCommandModule.class,
+//        UserCommandsModule.class,
+//        SystemOutModule.class
+//})
+//interface CommandRouterFactory {
+//
+//    CommandRouter router();
+//}

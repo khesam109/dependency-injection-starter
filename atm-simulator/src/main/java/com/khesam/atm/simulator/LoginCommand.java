@@ -6,14 +6,17 @@ class LoginCommand extends SingleArgCommand {
 
     private final Outputter outputter;
     private final Database database;
+    private final UserCommandsRouter.Factory userCommandsRouterFactory;
 
     @Inject
     public LoginCommand(
             Outputter outputter,
-            Database database
+            Database database,
+            UserCommandsRouter.Factory userCommandsRouterFactory
     ) {
         this.outputter = outputter;
         this.database = database;
+        this.userCommandsRouterFactory = userCommandsRouterFactory;
     }
 
     @Override
@@ -22,6 +25,8 @@ class LoginCommand extends SingleArgCommand {
         outputter.output(
                 username + " is logged in with balance: " + account.balance()
         );
-        return Result.handled();
+        return Result.enterNestedCommandSet(
+                userCommandsRouterFactory.create(account).router()
+        );
     }
 }

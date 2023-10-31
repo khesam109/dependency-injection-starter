@@ -1,5 +1,7 @@
 package com.khesam.atm.simulator;
 
+
+
 import java.util.Scanner;
 
 public class CommandLineAtm {
@@ -7,11 +9,11 @@ public class CommandLineAtm {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        CommandRouterFactory commandRouterFactory = DaggerCommandRouterFactory.create();
-        CommandRouter commandRouter = commandRouterFactory.router();
+        CommandProcessorFactory commandProcessorFactory = DaggerCommandProcessorFactory.create();
+        CommandProcessor commandProcessor = commandProcessorFactory.commandProcessor();
 
-        while (scanner.hasNext()) {
-            Command.Status status = commandRouter.rout(scanner.nextLine()).status();
+        while (scanner.hasNextLine()) {
+            Command.Status unused = commandProcessor.process(scanner.nextLine());
         }
     }
 }

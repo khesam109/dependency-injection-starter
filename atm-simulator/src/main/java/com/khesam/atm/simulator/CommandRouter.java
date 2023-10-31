@@ -27,7 +27,7 @@ final class CommandRouter {
         this.commands = commands;
     }
 
-    Command.Result rout(String input) {
+    Command.Result route(String input) {
         List<String> splitInput = split(input);
         if (splitInput.isEmpty()) {
             return invalidCommand(input);

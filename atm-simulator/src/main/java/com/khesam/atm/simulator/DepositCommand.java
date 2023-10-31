@@ -4,34 +4,22 @@ import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.util.List;
 
-class DepositCommand implements Command {
+class DepositCommand extends BigDecimalCommand {
 
-    private final Database database;
-    private final Outputter outputter;
+    private final Database.Account account;
 
     @Inject
     DepositCommand(
-            Database database,
+            Database.Account account,
             Outputter outputter
     ) {
-        this.database = database;
-        this.outputter = outputter;
+        super(outputter);
+        this.account = account;
     }
 
     @Override
-    public Result handleInput(List<String> input) {
-        if (input.size() != 2) {
-            return Result.invalid();
-        }
-
-        Database.Account account = database.getAccount(
-                input.get(0)
-        );
-
-        account.deposit(
-                new BigDecimal(input.get(1))
-        );
-        outputter.output(account.username() + " now has: " + account.balance());
-        return Result.handled();
+    protected void handleAmount(BigDecimal amount) {
+        account.deposit(amount);
+        super.outputter.output(account.username() + " now has: " + account.balance());
     }
 }
