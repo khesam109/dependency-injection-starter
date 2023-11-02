@@ -27,7 +27,7 @@ public class LateBindingRunner {
             Class<?> clazz = Class.forName(
                     loadWriterClassFromResources()
             );
-            return  (MessageWriter) clazz.getDeclaredConstructor().newInstance();
+            return (MessageWriter) clazz.getDeclaredConstructor().newInstance();
         } catch (ClassNotFoundException | InvocationTargetException | InstantiationException | IllegalAccessException |
                  NoSuchMethodException e) {
             throw new RuntimeException(e);
