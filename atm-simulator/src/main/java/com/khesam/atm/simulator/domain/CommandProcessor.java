@@ -48,7 +48,7 @@ public class CommandProcessor {
     }
 
     private Optional<Command> getCommand(String command) {
-        return Optional.of(
+        return Optional.ofNullable(
                 publicCommands.get(command)
         );
     }
