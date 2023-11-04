@@ -5,19 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.khesam</groupId>
-        <artifactId>dependency-injection-starter</artifactId>
+        <artifactId>loose-coupled-asghar</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>loose-coupled-asghar</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>loose-coupled-asghar-console-ui</module>
-        <module>loose-coupled-asghar-data-access</module>
-        <module>loose-coupled-asghar-domain</module>
-        <module>loose-coupled-asghar-runner</module>
-        <module>loose-coupled-asghar-swing-ui</module>
-    </modules>
+    <artifactId>loose-coupled-asghar-console-ui</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
