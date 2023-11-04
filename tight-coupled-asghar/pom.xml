@@ -13,33 +13,33 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>asghar-data-access</module>
-        <module>asghar-domain</module>
-        <module>asghar-console-ui</module>
-        <module>asghar-runner</module>
-        <module>asghar-swing-ui</module>
+        <module>tight-coupled-asghar-data-access</module>
+        <module>tight-coupled-asghar-domain</module>
+        <module>tight-coupled-asghar-console-ui</module>
+        <module>tight-coupled-asghar-runner</module>
+        <module>tight-coupled-asghar-swing-ui</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.khesam</groupId>
-                <artifactId>asghar-data-access</artifactId>
+                <artifactId>tight-coupled-asghar-data-access</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.khesam</groupId>
-                <artifactId>asghar-domain</artifactId>
+                <artifactId>tight-coupled-asghar-domain</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.khesam</groupId>
-                <artifactId>asghar-console-ui</artifactId>
+                <artifactId>tight-coupled-asghar-console-ui</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.khesam</groupId>
-                <artifactId>asghar-swing-ui</artifactId>
+                <artifactId>tight-coupled-asghar-swing-ui</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>
