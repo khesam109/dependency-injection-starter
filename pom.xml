@@ -12,8 +12,9 @@
     <modules>
         <module>inject-hello</module>
         <module>atm-simulator</module>
-        <module>tight-coupled-asghar</module>
         <module>loose-coupled-asghar</module>
+        <module>saadi-loose-coupled</module>
+        <module>majnoon-tight-coupled</module>
     </modules>
 
     <properties>
